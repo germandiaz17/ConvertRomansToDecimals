@@ -1,25 +1,28 @@
-const decToRomFunc = (number) => {
-    let data = Number(number)
-    if(Number.isInteger(data)) {
-
-        const ROMANOS = ['','C','CC','CCC','CD','D','DC','DCC','DCCC','CM',
-        '','X','XX','XXX','XL','L','LX','LXX','LXXX','XC',
-        '','I','II','III','IV','V','VI','VII','VIII','IX'];
-    
-        let digitos = String(number).split('');
-        let romano = '';
-        let i = 3;
-    
-        while (i--) {
-            romano = (ROMANOS[+digitos.pop() + (i * 10)] || '') + romano
-            console.log(romano)
-        }
-    
-        return Array(+digitos.join('') + 1).join('M') + romano;
-
-    }else{
-        return null
+const decToRomFunc = (num) => {
+    let data = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1,
+      },
+      roman = "",
+      i;
+    for (i in data) {
+      while (num >= data[i]) {
+        roman += i;
+        num -= data[i];
+      }
     }
-}
-
-export default decToRomFunc
+    return roman;
+  };
+  
+  export default decToRomFunc;

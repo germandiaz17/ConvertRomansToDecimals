@@ -12,7 +12,7 @@ const CharToInt = (caracter) => {
     return romans[caracter]
 };
 
-const RomToDecFunc = (romano) => {
+const prueba = (romano) => {
     if(typeof romano != 'string') {
         return null
     }
@@ -34,4 +34,4 @@ const RomToDecFunc = (romano) => {
     return numero
 }
 
-export default RomToDecFunc
+export default prueba
