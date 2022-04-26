@@ -16,14 +16,14 @@ const RomToDecFunc = (romano) => {
     if(typeof romano != 'string') {
         return null
     }
-
-    let numero = CharToInt(romano.charAt(0));
+    let romanos = romano.toUpperCase()
+    let numero = CharToInt(romanos.charAt(0));
     let anterior;
     let actual;
 
-    for(let i = 1; i < romano.length; i++) {
-        actual = CharToInt(romano.charAt(i));
-        anterior = CharToInt(romano.charAt(i - 1));
+    for(let i = 1; i < romanos.length; i++) {
+        actual = CharToInt(romanos.charAt(i));
+        anterior = CharToInt(romanos.charAt(i - 1));
 
         if(actual <= anterior) {
             numero += actual;
