@@ -1,16 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import decToRomFunc from './decToRom';
+import RomToDecFunc from './RomToDec';
+
 export const convertSlice = createSlice({
   name: 'convert',
   initialState: {
     value: '',
   },
   reducers: {
-    romanToDecimal: (state) => {
-      state.value = '123456789';
+    romanToDecimal: (state, action) => {
+      state.value = RomToDecFunc(action.payload);
     },
-    decimalToRoman: (state) => {
-      state.value = '12345';
+    decimalToRoman: (state, action) => {
+      state.value = decToRomFunc(action.payload);
     }
   },
 })

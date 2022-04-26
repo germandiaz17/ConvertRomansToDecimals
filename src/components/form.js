@@ -55,7 +55,7 @@ function FormConverter() {
           <Col>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>A</Form.Label>
-              <Form.Select id='b' value={optionB} onChange={changeOption} >
+              <Form.Select id='b' value={optionB} onChange={changeOption}>
                 <option value='romanos'>Romanos</option>
                 <option value='decimal'>Decimal</option>
               </Form.Select>
